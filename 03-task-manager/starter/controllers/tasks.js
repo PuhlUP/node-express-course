@@ -9,7 +9,7 @@ const createTask = async (req, res) => {
     // res.json(req.body)
 
     const task = await Task.create(req.body)
-    res.status(201).json({task})
+    res.status(201).json({ task })
 }
 
 const getTask = (req, res) => {
