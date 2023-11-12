@@ -8,15 +8,17 @@ const connectDB = require('./db/connect')
 require('dotenv').config()
 
 // midleware
+app.use(express.static('./public'))
 app.use(express.json())
 
 
 // routes 
 // http://localhost:3000/hello
 
-app.get('/hello', (req, res) => {
-    res.send('Task Manager App')
-})
+// test for hello only on page
+// app.get('/hello', (req, res) => {
+//     res.send('Task Manager App')
+// })
 
 app.use('/api/v1/tasks', tasks)
 
