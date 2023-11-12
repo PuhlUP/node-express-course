@@ -5,6 +5,7 @@ const taskSchema = new mongoose.Schema({
         type: String,
         required: [true, 'must provide name'],
         trim: true,
+        set: (value) => value.replace(/\s+/g, ' ').trim(),
         maxlength: [50, 'name can not be more than 20 characters']
     },
     completed: {
